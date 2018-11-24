@@ -1,0 +1,25 @@
+Login.java
+package com.webtest.demo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import com.webtest.core.BaseTest;
+
+public class Login  extends  BaseTest{
+	@Test
+	
+	public void admin_Login(String username,String password) {
+		//打开页面
+		webtest.open("baseurl");
+		//文本框输入
+		webtest.type("name=username", username);
+		webtest.type("name=password", password);
+		webtest.click("xpath=//input[@type='submit']");
+		assertTrue(webtest.isTextPresent("退出"));
+	}
+
+	
+
+}
