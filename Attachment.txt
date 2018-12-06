@@ -1,0 +1,114 @@
+package com.webtest.demo;
+
+import com.webtest.core.WebDriverEngine;
+
+public class Attachment{
+	WebDriverEngine webtest = null;
+	private String 输入内容;
+	public Attachment(WebDriverEngine webtest) {
+		this.webtest=webtest;
+	}
+	public void Login(String username,String password) {
+		webtest.open("http://localhost:8032/OA/index.php");
+		webtest.type("name=username",username);
+		webtest.type("name=password",password);
+		webtest.click("link=登录");
+		webtest.click("xpath=//input[@type='submit']");
+		webtest.click("xpath=//input[@type='button']");
+		webtest.click("link=+选择接收人");
+		
+	}
+	public void Tab() {//标记
+		webtest.click("xpath=/html/body/div[1]/div[2]/div/a[2]/img");
+		webtest.click("name=chkall");
+		webtest.click("xpath=//input[@type='updateform(2)']");
+		webtest.click("xpath=//input[@type='button']");
+		
+	}
+	public void Clear() {//清理数据
+		webtest.click("xpath=/html/body/div[1]/div[2]/div/a[2]/img");
+		webtest.click("name=chkall");
+		webtest.click("xpath=//input[@type='dateform(1)']");
+		
+		
+	}
+	public void Emptymessage() {//发送空消息
+	    webtest.click("link=消息发送列表");
+	    webtest.click("xpath=//input[@type='button.btn.btn-success']");
+	    webtest.click("link=+选择接收人");
+	    webtest.click("xpath=//input[@type='input.BigButton']");
+	    
+}
+	public void Queryemial(String time,String time1) {//查询邮件
+		webtest.click("xpath=/html/body/div[1]/div[2]/div/a[2]/img");
+		webtest.type("name=vstartdate", time);
+		webtest.type("name=venddate",time1);
+		webtest.click("id='do_search'");
+		
+		
+		
+	}
+	public void Sort() {//将桌面元素进行排序
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[2]/select/option[4]");
+		webtest.click("xpath=//input[@type='func_up()']");
+		webtest.click("xpath=//input[@type='func_down()']");
+		webtest.click("class='BigButton'");
+		
+		
+	}
+	public void Onlinechat() {//在线人员在线聊天
+		webtest.click("xpath=/html/body/div[1]/div[2]/div/a[1]/img");
+		webtest.click("class='chat03_title_t'");
+		
+	}
+	public void Givemessage() {//将一则消息发送给多个人
+		webtest.click("class='btn btn-success'");
+		webtest.click("link=+选择接收人");
+		webtest.click("link=+选择接收人");
+		webtest.type("name=content", 输入内容);
+		webtest.click("name=Submit");
+		
+	}
+	public void Addmodule() {//可以添加的最多模块
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[4]/select/option[5]");
+		webtest.click("xpath=//input[@type='func_insert']");
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[4]/select/option[5]");
+		webtest.click("xpath=//input[@type='func_insert']");
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[4]/select/option[5]");
+		webtest.click("xpath=//input[@type='func_insert']");
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[4]/select/option[5]");
+		webtest.click("xpath=//input[@type='func_insert']");
+		
+		
+	}
+	public void GivemessageAnother() {//切换桌面
+		webtest.click("xpath=/html/body/div[1]/div[2]/div/a[4]/img");
+		webtest.click("xpath=/html/body/div[2]/div[8]/div/div[1]/div[1]/div[1]/div[28]/span/img");
+		
+		
+	}
+	public void Addelement() {//添加页面元素
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[4]/select/option[5]]");
+		webtest.click("xpath=//input[@type='func_insert()']");
+		webtest.click("class=BigButton");
+		
+	}
+	public void Deleteelement() {//删除页面元素
+		webtest.click("xpath=/html/body/form/table/tbody/tr[2]/td[2]/select/option[4]");
+		webtest.click("xpath=//input[@type='func_delete']");
+		webtest.click("class=BigButton");
+		
+	}
+	public void Addenclosure() {//添加附件
+		webtest.click("xpath=/html/body/div[1]/div[2]/div/a[2]/img");
+		webtest.click("link=+选择接收人");
+		webtest.type("name=content", 输入内容);
+		webtest.click("link=+附件上传");
+		webtest.click("name=Submit");
+		
+	}
+	
+	
+	
+	
+}
