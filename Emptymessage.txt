@@ -1,0 +1,20 @@
+package com.webtest.demo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import com.webtest.core.BaseTest;
+
+public class Emptymessage extends BaseTest {
+	@Test
+	
+	public void Emptymessage_Emptymessage() {
+		Attachment empty =new Attachment(webtest);
+		empty.Login("admin","123456");
+		empty.Emptymessage();
+		assertTrue(webtest.ifContains(null));
+		
+	}
+
+}
