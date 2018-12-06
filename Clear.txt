@@ -1,0 +1,19 @@
+package com.webtest.demo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import com.webtest.core.BaseTest;
+
+public class Clear extends BaseTest {
+	
+	@Test
+	public void Clear_Clear() {
+	  Attachment Clear=new Attachment(webtest);
+	  Clear.Login("admin", "123456");
+	  Clear.Clear();
+	  assertTrue(webtest.ifContains("null"));
+	}
+
+}
