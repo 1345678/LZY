@@ -1,0 +1,22 @@
+package com.webtest.demo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import com.webtest.core.BaseTest;
+
+public class Tab extends BaseTest{
+	@Test
+	
+	public void Tab_Tab() {
+		
+		Attachment  tab=new Attachment(webtest);
+		tab.Login("admin","123456");
+		tab.Tab();
+		assertTrue(webtest.ifContains("БъзЂ"));
+		
+	}
+	
+
+}
