@@ -1,0 +1,19 @@
+package com.webtest.demo;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.annotations.Test;
+
+import com.webtest.core.BaseTest;
+
+public class Sort extends BaseTest{
+	@Test
+	public void Sort_Sort() {
+		Attachment sort=new Attachment(webtest);
+		sort.Login("admin","123456");
+		sort.Sort();
+		assertTrue(webtest.ifContains("ÔªËØ"));
+		
+	}
+
+}
